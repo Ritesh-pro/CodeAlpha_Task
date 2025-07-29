@@ -1,0 +1,572 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Landing container */
+.landing-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background particles */
+.particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.particle:nth-child(1) {
+    left: 10%;
+    animation-delay: 0s;
+    animation-duration: 8s;
+}
+
+.particle:nth-child(2) {
+    left: 20%;
+    animation-delay: 1s;
+    animation-duration: 7s;
+}
+
+.particle:nth-child(3) {
+    left: 30%;
+    animation-delay: 2s;
+    animation-duration: 9s;
+}
+
+.particle:nth-child(4) {
+    left: 40%;
+    animation-delay: 3s;
+    animation-duration: 6s;
+}
+
+.particle:nth-child(5) {
+    left: 50%;
+    animation-delay: 4s;
+    animation-duration: 8s;
+}
+
+.particle:nth-child(6) {
+    left: 60%;
+    animation-delay: 5s;
+    animation-duration: 7s;
+}
+
+.particle:nth-child(7) {
+    left: 70%;
+    animation-delay: 6s;
+    animation-duration: 9s;
+}
+
+.particle:nth-child(8) {
+    left: 80%;
+    animation-delay: 7s;
+    animation-duration: 6s;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* Mathematical Instruments */
+.instruments {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+.instrument {
+    position: absolute;
+    opacity: 0;
+    animation: instrumentAppear 2s ease-out forwards;
+}
+
+.instrument svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+}
+
+/* Protractor */
+.protractor {
+    top: 10%;
+    left: 10%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0.5s;
+    animation: protractorFloat 4s ease-in-out infinite;
+}
+
+@keyframes protractorFloat {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-20px) rotate(5deg);
+    }
+}
+
+/* Ruler */
+.ruler {
+    top: 20%;
+    right: 15%;
+    width: 100px;
+    height: 20px;
+    animation-delay: 1s;
+    animation: rulerFloat 4s ease-in-out infinite;
+}
+
+@keyframes rulerFloat {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-15px) rotate(-3deg);
+    }
+}
+
+/* Compass */
+.compass {
+    bottom: 25%;
+    left: 15%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 1.5s;
+    animation: compassFloat 4s ease-in-out infinite;
+}
+
+@keyframes compassFloat {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-25px) rotate(10deg);
+    }
+}
+
+/* Calculator */
+.calculator {
+    bottom: 15%;
+    right: 20%;
+    width: 70px;
+    height: 50px;
+    animation-delay: 2s;
+    animation: calculatorFloat 4s ease-in-out infinite;
+}
+
+@keyframes calculatorFloat {
+    0%, 100% {
+        transform: translateY(0px) scale(1);
+    }
+    50% {
+        transform: translateY(-18px) scale(1.1);
+    }
+}
+
+/* Triangle */
+.triangle {
+    top: 60%;
+    left: 5%;
+    width: 50px;
+    height: 50px;
+    animation-delay: 2.5s;
+    animation: triangleFloat 4s ease-in-out infinite;
+}
+
+@keyframes triangleFloat {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-22px) rotate(-5deg);
+    }
+}
+
+/* Pencil */
+.pencil {
+    top: 15%;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    animation-delay: 3s;
+    animation: pencilFloat 4s ease-in-out infinite;
+}
+
+@keyframes pencilFloat {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-30px) rotate(15deg);
+    }
+}
+
+@keyframes instrumentAppear {
+    0% {
+        opacity: 0;
+        transform: scale(0) rotate(180deg);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.2) rotate(90deg);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+/* Main Content */
+.content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: white;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.title-container {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.main-title {
+    font-family: 'Orbitron', monospace;
+    font-size: 4.5rem;
+    font-weight: 900;
+    color: #fff;
+    text-shadow: 
+        0 0 20px rgba(255, 255, 255, 0.5),
+        0 0 40px rgba(255, 255, 255, 0.3),
+        0 0 60px rgba(255, 255, 255, 0.2);
+    animation: titleGlow 3s ease-in-out infinite;
+    letter-spacing: 0.2em;
+    margin-bottom: 1rem;
+}
+
+@keyframes titleGlow {
+    0%, 100% {
+        text-shadow: 
+            0 0 20px rgba(255, 255, 255, 0.5),
+            0 0 40px rgba(255, 255, 255, 0.3),
+            0 0 60px rgba(255, 255, 255, 0.2);
+    }
+    50% {
+        text-shadow: 
+            0 0 30px rgba(255, 255, 255, 0.8),
+            0 0 60px rgba(255, 255, 255, 0.5),
+            0 0 90px rgba(255, 255, 255, 0.3);
+    }
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-weight: 300;
+    opacity: 0.9;
+    margin-bottom: 1rem;
+    animation: subtitleFade 2s ease-out 1s both;
+}
+
+@keyframes subtitleFade {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 0.9;
+        transform: translateY(0);
+    }
+}
+
+.title-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    animation: glowPulse 4s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes glowPulse {
+    0%, 100% {
+        opacity: 0.3;
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+}
+
+.description {
+    margin-bottom: 3rem;
+    animation: descriptionSlide 2s ease-out 1.5s both;
+}
+
+.description p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    line-height: 1.6;
+}
+
+@keyframes descriptionSlide {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Enter Button */
+.enter-button {
+    position: relative;
+    padding: 15px 40px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: white;
+    background: linear-gradient(145deg, #667eea, #764ba2);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 
+        0 8px 20px rgba(102, 126, 234, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+    animation: buttonAppear 2s ease-out 2s both;
+}
+
+.enter-button:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 
+        0 15px 30px rgba(102, 126, 234, 0.6),
+        0 0 20px rgba(102, 126, 234, 0.4),
+        0 0 0 1px rgba(255, 255, 255, 0.2);
+}
+
+.enter-button:active {
+    transform: translateY(0) scale(0.98);
+}
+
+.button-text {
+    position: relative;
+    z-index: 2;
+}
+
+.button-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 50px;
+}
+
+.enter-button:hover .button-glow {
+    opacity: 1;
+}
+
+.button-sparkles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+@keyframes buttonAppear {
+    0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Floating Equations */
+.equations {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.equation {
+    position: absolute;
+    font-family: 'Orbitron', monospace;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    animation: equationFloat 8s ease-in-out infinite;
+}
+
+.equation:nth-child(1) {
+    top: 15%;
+    left: 25%;
+    animation-delay: 0s;
+}
+
+.equation:nth-child(2) {
+    top: 25%;
+    right: 30%;
+    animation-delay: 1.5s;
+}
+
+.equation:nth-child(3) {
+    bottom: 30%;
+    left: 20%;
+    animation-delay: 3s;
+}
+
+.equation:nth-child(4) {
+    bottom: 20%;
+    right: 25%;
+    animation-delay: 4.5s;
+}
+
+.equation:nth-child(5) {
+    top: 50%;
+    left: 5%;
+    animation-delay: 6s;
+}
+
+@keyframes equationFloat {
+    0%, 100% {
+        opacity: 0.3;
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        opacity: 0.8;
+        transform: translateY(-40px) rotate(5deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 3rem;
+    }
+    
+    .subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .description p {
+        font-size: 1rem;
+    }
+    
+    .enter-button {
+        padding: 12px 30px;
+        font-size: 1rem;
+    }
+    
+    .instrument {
+        transform: scale(0.7);
+    }
+    
+    .protractor {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .ruler {
+        width: 80px;
+        height: 16px;
+    }
+    
+    .compass {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .calculator {
+        width: 60px;
+        height: 40px;
+    }
+    
+    .triangle {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .pencil {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .main-title {
+        font-size: 2.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .description p {
+        font-size: 0.9rem;
+    }
+    
+    .instrument {
+        transform: scale(0.5);
+    }
+    
+    .equation {
+        font-size: 0.8rem;
+    }
+} 

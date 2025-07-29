@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCIFY - Advanced Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-container">
+        <div class="calculator-container">
+            <div class="calculator">
+                <div class="display-section">
+                    <div class="display">
+                        <div class="previous-operand" id="previous-operand"></div>
+                        <div class="current-operand" id="current-operand">0</div>
+                    </div>
+                    <div class="display-background"></div>
+                </div>
+                
+                <div class="buttons-grid">
+                    <!-- First Row -->
+                    <button class="btn btn-secondary" data-action="clear" data-key="Escape">
+                        <span class="btn-text">AC</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                    <button class="btn btn-secondary" data-action="delete" data-key="Backspace">
+                        <span class="btn-text">DEL</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                    <button class="btn btn-secondary" data-action="percent" data-key="%">
+                        <span class="btn-text">%</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                    <button class="btn btn-operator" data-action="divide" data-key="/">
+                        <span class="btn-text">÷</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                    
+                    <!-- Second Row -->
+                    <button class="btn btn-function" data-action="sqrt" data-key="s">
+                        <span class="btn-text">√</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                    <button class="btn btn-function" data-action="square" data-key="q">
+                        <span class="btn-text">x²</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                    <button class="btn btn-function" data-action="power" data-key="p">
+                        <span class="btn-text">xʸ</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                    <button class="btn btn-operator" data-action="multiply" data-key="*">
+                        <span class="btn-text">×</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                    
+                    <!-- Third Row -->
+                    <button class="btn btn-number" data-number="7" data-key="7">
+                        <span class="btn-text">7</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                    <button class="btn btn-number" data-number="8" data-key="8">
+                        <span class="btn-text">8</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                    <button class="btn btn-number" data-number="9" data-key="9">
+                        <span class="btn-text">9</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                    <button class="btn btn-operator" data-action="subtract" data-key="-">
+                        <span class="btn-text">−</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                    
+                    <!-- Fourth Row -->
+                    <button class="btn btn-number" data-number="4" data-key="4">
+                        <span class="btn-text">4</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                    <button class="btn btn-number" data-number="5" data-key="5">
+                        <span class="btn-text">5</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                    <button class="btn btn-number" data-number="6" data-key="6">
+                        <span class="btn-text">6</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                    <button class="btn btn-operator" data-action="add" data-key="+">
+                        <span class="btn-text">+</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                    
+                    <!-- Fifth Row -->
+                    <button class="btn btn-number" data-number="1" data-key="1">
+                        <span class="btn-text">1</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                    <button class="btn btn-number" data-number="2" data-key="2">
+                        <span class="btn-text">2</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                    <button class="btn btn-number" data-number="3" data-key="3">
+                        <span class="btn-text">3</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                    <button class="btn btn-function" data-action="factorial" data-key="f">
+                        <span class="btn-text">x!</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                    
+                    <!-- Sixth Row -->
+                    <button class="btn btn-number" data-number="0" data-key="0">
+                        <span class="btn-text">0</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                    <button class="btn btn-number" data-number="." data-key=".">
+                        <span class="btn-text">.</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                    <button class="btn btn-function" data-action="reciprocal" data-key="r">
+                        <span class="btn-text">1/x</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                    <button class="btn btn-equals" data-action="equals" data-key="Enter">
+                        <span class="btn-text">=</span>
+                        <span class="btn-text-secondary">CALC</span>
+                        <div class="btn-glow"></div>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Floating particles for background effect -->
+            <div class="particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+        </div>
+        
+        <!-- Additional content for scrolling -->
+        <div class="content-section">
+            <div class="content-container">
+                <h2>🎉 Welcome to Your Animated Calculator!</h2>
+                <p>Experience the power of modern web design with this beautiful, feature-rich calculator.</p>
+                
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <h3>🧮 Advanced Functions</h3>
+                        <p>Square root, power, factorial, reciprocal, and more mathematical operations.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>🎨 Beautiful Animations</h3>
+                        <p>Smooth hover effects, sparkle animations, and interactive feedback.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>⌨️ Keyboard Support</h3>
+                        <p>Full keyboard navigation with shortcuts for all operations.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>📱 Mobile Friendly</h3>
+                        <p>Responsive design that works perfectly on all devices.</p>
+                    </div>
+                </div>
+                
+                <div class="usage-section">
+                    <h3>🚀 How to Use</h3>
+                    <ul>
+                        <li>Click buttons or use your keyboard for input</li>
+                        <li>Try the special equals button with its amazing effects</li>
+                        <li>Use advanced functions like square root (s), power (p), factorial (f)</li>
+                        <li>Experience the Konami code easter egg!</li>
+                    </ul>
+                </div>
+                
+                <div class="scroll-demo">
+                    <h3>📜 Scroll Demo</h3>
+                    <p>Scroll down to see the scroll-to-top button appear! It will show up when you scroll past 300px.</p>
+                    <div class="scroll-indicator">
+                        <div class="scroll-bar"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Back to landing button -->
+    <button class="back-button" id="back-button" title="Back to landing" onclick="goToLanding()">
+        <svg class="back-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 12H5M12 19L5 12L12 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="back-glow"></div>
+    </button>
+    
+    <!-- Scroll to top button -->
+    <button class="scroll-to-top" id="scroll-to-top" title="Scroll to top">
+        <svg class="scroll-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 4L4 12H9V20H15V12H20L12 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <div class="scroll-glow"></div>
+    </button>
+    
+    <script src="script.js"></script>
+</body>
+</html> 
